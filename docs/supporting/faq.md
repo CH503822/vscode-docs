@@ -2,7 +2,7 @@
 TOCTitle: FAQ
 ContentId: E02F97FD-842B-4D27-B461-37DD18B2582E
 PageTitle: Visual Studio Code Frequently Asked Questions
-DateApproved: 11/1/2023
+DateApproved: 02/06/2025
 MetaDescription: Visual Studio Code Frequently Asked Questions
 ---
 # Visual Studio Code FAQ
@@ -209,9 +209,9 @@ You can download the official Visual Studio Code icons and read the usage guidel
 
 ## What is a VS Code "workspace"?
 
-A VS Code "workspace" is usually just your project root folder. VS Code uses the "workspace" concept in order to scope project configurations such as project-specific [settings](/docs/getstarted/settings.md) as well as config files for [debugging](/docs/editor/debugging.md) and [tasks](/docs/editor/tasks.md). Workspace files are stored at the project root in a `.vscode` folder. You can also have more than one root folder in a VS Code workspace through a feature called [Multi-root workspaces](/docs/editor/multi-root-workspaces.md).
+A VS Code "workspace" is usually just your project root folder. VS Code uses the "workspace" concept in order to scope project configurations such as project-specific [settings](/docs/getstarted/settings.md) as well as config files for [debugging](/docs/editor/debugging.md) and [tasks](/docs/editor/tasks.md). Workspace files are stored at the project root in a `.vscode` folder. You can also have more than one root folder in a VS Code workspace through a feature called [Multi-root workspaces](/docs/editor/workspaces/multi-root-workspaces.md).
 
-You can learn more in the [What is a VS Code "workspace"?](/docs/editor/workspaces.md) article.
+You can learn more in the [What is a VS Code "workspace"?](/docs/editor/workspaces/workspaces.md) article.
 
 ## Can I run a portable version of VS Code?
 
@@ -295,9 +295,15 @@ Additionally, 32-bit OEM support has been dropped with Windows 10, version 2004.
 
 ## Can I run VS Code on old macOS versions?
 
-VS Code desktop version starting with 1.83 (September 2023) is deprecating support for macOS Mojave (version 10.14 and older). Starting with VS Code 1.86 (January 2024), we will stop updating VS Code on macOS Mojave (version 10.14 and older). You will need to upgrade to a newer macOS version to use later versions of VS Code.
+VS Code desktop version starting with 1.96 (November 2024) is deprecating support for macOS Catalina (version 10.15 and older). Starting with VS Code 1.98 (February 2025), we will stop updating VS Code on macOS Catalina (version 10.15 and older). You will need to upgrade to a newer macOS version to use later versions of VS Code.
 
-VS Code will no longer provide product updates or security fixes on macOS Mojave (versions 10.14 and older) and VS Code version 1.85 will be the last available release for macOS Mojave (10.14 and older). You can learn more about upgrading your macOS version at [support.apple.com](https://support.apple.com/en-us/HT201260).
+VS Code will no longer provide product updates or security fixes on macOS Catalina (versions 10.15 and older) and VS Code version 1.97 will be the last available release for macOS Catalina (10.15 and older). You can learn more about upgrading your macOS version at [support.apple.com](https://support.apple.com/en-us/HT201260).
+
+## Can I run VS Code on older Linux distributions?
+
+Starting with VS Code release 1.86.1 (January 2024), VS Code desktop is only compatible with Linux distributions based on glibc 2.28 or later, for example, Debian 10, RHEL 8, or Ubuntu 20.04.
+
+If you are unable to upgrade your Linux distribution, the recommended alternative is to use our [web client](/docs/editor/vscode-web.md). If you would like to use the desktop version, then you can download the VS Code release 1.85 from [here](https://code.visualstudio.com/updates/v1_85). Depending on your platform, make sure to disable updates to stay on that version. A good recommendation is to set up the installation with [Portable Mode](/docs/editor/portable.md).
 
 ## Technical Support
 

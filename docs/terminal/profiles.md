@@ -1,10 +1,10 @@
 ---
-Order: 2
+Order: 3
 Area: terminal
 TOCTitle: Terminal Profiles
 ContentId: 1a9d76e8-9c8c-446e-974e-d71570e7d62a
 PageTitle: Terminal Profiles in Visual Studio Code
-DateApproved: 11/1/2023
+DateApproved: 02/06/2025
 MetaDescription: Visual Studio Code's integrated terminal allows configuring various profiles to make launching various shells easier.
 ---
 # Terminal Profiles
@@ -114,6 +114,21 @@ By default, the task/debug features will use the default profile. This may not b
 }
 ```
 
+## Profile-specific keyboard shortcuts
+
+Launching a terminal with a specific profile via a [dedicated keyboard shortcut](https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization) can be accomplished with the `workbench.action.terminal.newWithProfile` command. This command takes a profile name and optional location as arguments. For example, to bind `kbstyle(Ctrl+Shift+T)` to open a terminal with the `zsh` profile:
+
+```json
+{
+  "key": "ctrl+shift+t",
+  "command": "workbench.action.terminal.newWithProfile",
+  "args": {
+    "profileName": "zsh",
+    "location": "editor"
+  }
+}
+```
+
 ## Unsafe profile detection
 
 Certain shells are installed in unsafe paths by default, like a path that could be written to by another user on a Windows environment. VS Code will still detect these but not expose them as a proper profile until they have been explicitly configured via the **Terminal: Select Default Profile** command. When configuring an unsafe profile, there will be a warning before it's added:
@@ -178,11 +193,14 @@ MSYS2's bash shell can be configured with the following profile:
       "args": [
         "--login",
         "-i"
-      ]
+      ],
+      "env": { "CHERE_INVOKING": "1" }
     }
   }
 }
 ```
+
+The [`CHERE_INVOKING` environment variable](https://www.msys2.org/wiki/Launchers/#the-idea) is used to tell the login initialization script to preserve the working directory, instead of opening at `$HOME`.
 
 This profile should be detected automatically as an [unsafe profile](#unsafe-profile-detection) when installed at the default path `C:\\msys64`.
 
@@ -192,7 +210,7 @@ When PowerShell 6+ is installed, Windows PowerShell is not included in the profi
 
 ## WSL
 
-When running VS Code on your local machine, Windows Subsystem for Linux shells should be automatically detected. Depending on your setup, this may be a nuisance if you have a lot of distros installed. For finer control over the WSL profiles the automatic detection can be disabled with the `terminal.integrated.useWslProfiles` setting, then here's an example of how to manually configure a WSL shell:
+When running VS Code on your local machine, Windows Subsystem for Linux shells should be automatically detected. Depending on your setup, this may be a nuisance if you have a lot of distros installed. For finer control over the WSL profiles the automatic detection can be disabled with the `setting(terminal.integrated.useWslProfiles)` setting, then here's an example of how to manually configure a WSL shell:
 
 ```jsonc
 {
